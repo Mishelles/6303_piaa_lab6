@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(KMP)
+project(PatternsSearch)
 
 set(CMAKE_CXX_STANDARD 11)
 
@@ -8,4 +8,4 @@ set(CMAKE_CXX_STANDARD 11)
 #find_package(GTest REQUIRED)
 #include_directories(${GTEST_INCLUDE_DIRS})
 
-add_executable(findPatterns src/findPatterns.cpp src/AhoCorasick.cpp src/AhoCorasick.h src/BohrTree.cpp src/BohrTree.h src/BohrVertex.cpp src/BohrVertex.h)
+add_executable(PatternsSearch PatternsSearch/src/findPatterns.cpp PatternsSearch/src/AhoCorasick.cpp PatternsSearch/headers/AhoCorasick.h PatternsSearch/src/BohrTree.cpp PatternsSearch/headers/BohrTree.h PatternsSearch/src/BohrVertex.cpp PatternsSearch/headers/BohrVertex.h)
