@@ -8,14 +8,14 @@ enable_testing()
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
-add_executable(PatternsSearch PatternsSearch/src/findPatterns.cpp PatternsSearch/src/AhoCorasick.cpp PatternsSearch/headers/AhoCorasick.h PatternsSearch/src/BohrTree.cpp PatternsSearch/headers/BohrTree.h PatternsSearch/src/BohrVertex.cpp PatternsSearch/headers/BohrVertex.h)
-add_executable(WildCardSearch SearchWithJoker/src/searchWithJoker.cpp SearchWithJoker/src/AhoCorasick.cpp SearchWithJoker/headers/AhoCorasick.h SearchWithJoker/src/BohrTree.cpp SearchWithJoker/headers/BohrTree.h SearchWithJoker/src/BohrVertex.cpp SearchWithJoker/headers/BohrVertex.h)
+add_executable(PatternsSearch PatternsSearch/src/findPatterns.cpp PatternsSearch/src/AhoCorasick.cpp PatternsSearch/headers/AhoCorasick.h PatternsSearch/src/Bohr.cpp PatternsSearch/headers/Bohr.h PatternsSearch/src/Node.cpp PatternsSearch/headers/Node.h)
+add_executable(WildCardSearch WildCardSearch/src/wildCardSearch.cpp WildCardSearch/src/AhoCorasick.cpp WildCardSearch/headers/AhoCorasick.h WildCardSearch/src/Bohr.cpp WildCardSearch/headers/Bohr.h WildCardSearch/src/Node.cpp WildCardSearch/headers/Node.h)
 
-add_executable(testPatternsSearch test/testPatternsSearch.cpp PatternsSearch/src/AhoCorasick.cpp PatternsSearch/headers/AhoCorasick.h PatternsSearch/src/BohrTree.cpp PatternsSearch/headers/BohrTree.h PatternsSearch/src/BohrVertex.cpp PatternsSearch/headers/BohrVertex.h)
-add_executable(testWildCardSearch test/testJokerSearch.cpp SearchWithJoker/src/AhoCorasick.cpp SearchWithJoker/headers/AhoCorasick.h SearchWithJoker/src/BohrTree.cpp SearchWithJoker/headers/BohrTree.h SearchWithJoker/src/BohrVertex.cpp SearchWithJoker/headers/BohrVertex.h)
+add_executable(testPatternsSearch test/testPatternsSearch.cpp PatternsSearch/src/AhoCorasick.cpp PatternsSearch/headers/AhoCorasick.h PatternsSearch/src/Bohr.cpp PatternsSearch/headers/Bohr.h PatternsSearch/src/Node.cpp PatternsSearch/headers/Node.h)
+add_executable(testWildCardSearch test/testWildCardSearch.cpp WildCardSearch/src/AhoCorasick.cpp WildCardSearch/headers/AhoCorasick.h WildCardSearch/src/Bohr.cpp WildCardSearch/headers/Bohr.h WildCardSearch/src/Node.cpp WildCardSearch/headers/Node.h)
 
 target_link_libraries(testPatternsSearch ${GTEST_LIBRARIES} pthread)
 target_link_libraries(testWildCardSearch ${GTEST_LIBRARIES} pthread)
 
 add_test(TestPatternSearch "./testPatternsSearch")
-add_test(TestPatternSearch "./testWildCardSearch")
+add_test(TestWildCardSearch "./testWildCardSearch")

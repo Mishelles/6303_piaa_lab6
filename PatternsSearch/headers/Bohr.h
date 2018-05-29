@@ -1,14 +1,14 @@
-#ifndef BOHR_TREE_H
-#define BOHR_TREE_H
+#ifndef BOHR_H
+#define BOHR_H
 
-#include "BohrVertex.h"
+#include "Node.h"
 #include <vector>
 
 typedef std::pair<int, int> result;
 
-struct BohrTree {
+struct Bohr {
 
-    BohrTree();
+    Bohr();
 
     // Добавление строки в дерево
     void addString(const std::string&, const int&);
@@ -30,7 +30,7 @@ struct BohrTree {
 
 
     // Данные
-    std::vector<BohrVertex> bohrTree;
+    std::vector<Node> bohr;
 };
 
 #endif

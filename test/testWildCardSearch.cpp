@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../SearchWithJoker/headers/AhoCorasick.h"
+#include "../WildCardSearch/headers/AhoCorasick.h"
 #include <iostream>
 
 struct TestAhoCorasick : testing::Test {

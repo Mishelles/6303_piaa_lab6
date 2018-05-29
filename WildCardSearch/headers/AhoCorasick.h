@@ -1,7 +1,7 @@
 #ifndef AHO_CORASICK_H
 #define AHO_CORASICK_H
 
-#include "BohrTree.h"
+#include "Bohr.h"
 
 class AhoCorasick {
 
@@ -16,7 +16,7 @@ public:
 
 private:
 
-    BohrTree* _bohr;
+    Bohr* _bohr;
     std::string _text;
     std::string _joker;
     char _jokerSym;

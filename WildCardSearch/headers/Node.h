@@ -1,14 +1,14 @@
-#ifndef BOHR_VERTEX_H
-#define BOHR_VERTEX_H
+#ifndef NODE_H
+#define NODE_H
 
 #include <map>
 #include <vector>
 
-struct BohrVertex {
+struct Node {
 
-    BohrVertex(const char& sym, const int& parentLink = -1);
+    Node(const char& sym, const int& parentLink = -1);
 
-    std::map<char, int> nextVertices;
+    std::map<char, int> nextNodes;
     std::map<char, int> moves;
 
     std::vector<int> patternNum;

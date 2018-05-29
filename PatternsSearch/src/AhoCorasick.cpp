@@ -14,7 +14,7 @@ void AhoCorasick::init(const std::string& text, const std::vector<std::string>& 
     _text = text;
     _patterns = patterns;
 
-    _bohr = new BohrTree;
+    _bohr = new Bohr;
 
     for (unsigned int i = 0; i < numOfPatterns; i++) {
         _bohr->addString(_patterns[i], i);

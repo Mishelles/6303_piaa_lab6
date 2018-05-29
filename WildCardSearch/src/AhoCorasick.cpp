@@ -12,7 +12,7 @@ void AhoCorasick::init(const std::string& text, const std::string& joker, const 
     _text = text;
     _joker = joker;
     _jokerSym = jokerSym;
-    _bohr = new BohrTree(text.size());
+    _bohr = new Bohr(text.size());
 }
 
 std::vector<int> AhoCorasick::solve() {

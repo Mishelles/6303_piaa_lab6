@@ -1,4 +1,4 @@
-#include "BohrTree.h"
+#include "Bohr.h"
 
 class AhoCorasick {
 
@@ -16,6 +16,6 @@ private:
       std::string _text;
       std::vector<std::string> _patterns;
 
-      BohrTree* _bohr;
+      Bohr* _bohr;
 
 };

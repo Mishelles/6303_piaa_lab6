@@ -1,13 +1,13 @@
-#ifndef BOHR_TREE_H
-#define BOHR_TREE_H
+#ifndef BOHR_H
+#define BOHR_H
 
-#include "BohrVertex.h"
+#include "Node.h"
 
 typedef std::pair<int, int> result;
 
-struct BohrTree {
+struct Bohr {
 
-      BohrTree(const int& size);
+      Bohr(const int& size);
 
       void addString(const std::string& pattern, const int& numOfPattern);
       int getAutoMove(const int& vertexNum, const char& sym);
@@ -24,7 +24,7 @@ struct BohrTree {
 
       // Данные
 
-      std::vector<BohrVertex> bohrTree;
+      std::vector<Node> bohr;
       std::vector<int> results;
       std::vector<int> back;
       std::vector<unsigned int> len;

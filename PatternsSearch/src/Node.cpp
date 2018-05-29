@@ -1,6 +1,6 @@
-#include "../headers/BohrVertex.h"
+#include "../headers/Node.h"
 
-BohrVertex::BohrVertex(const char& sym, const int& parentLink)
+Node::Node(const char& sym, const int& parentLink)
     : sym(sym)
     , parentLink(parentLink)
     , isEndOfPattern(false)
@@ -8,5 +8,5 @@ BohrVertex::BohrVertex(const char& sym, const int& parentLink)
     , correctSuffixLink(-1)
 {
     moves[sym] = -1;
-    nextVertices[sym] = -1;
+    nextNodes[sym] = -1;
 }
