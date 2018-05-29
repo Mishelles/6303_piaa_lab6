@@ -64,7 +64,6 @@ INSTANTIATE_TEST_CASE_P(Default, patternsSearchTest,
   testState{"CCCA", 1, {"ACC"}, {}},
   testState{"ACIRDJHRDLJSDNCJOPQLMZ", 5, {"ACI", "HRLD", "L", "OPQ", "DN"}, {{1, 1}, {10, 3}, {13, 5}, {17, 4}, {20, 3}}},
   testState{"LOLYPLOLYPOPLOL", 5, {"LOL", "LOLY", "LOLYP", "LOLYPOP", "L"}, {{1, 1}, {1, 2}, {1, 3}, {1, 5}, {3, 5}, {6, 1}, {6, 2}, {6, 3}, {6, 4}, {6, 5}, {8, 5}, {13, 1}, {13, 5}, {15, 5}}}
-  // testState{"АФАФ", 1, {"АФ"}, {{1, 1}, {3, 1}}}
   ));
 
 int main(int argc, char* argv[]) {
