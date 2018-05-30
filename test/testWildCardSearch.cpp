@@ -17,28 +17,28 @@ TestAhoCorasick::~TestAhoCorasick() {
 }
 
 struct testState {
-    std::string text;
-    std::string joker;
-    char jokerSym;
+    std::wstring text;
+    std::wstring joker;
+    wchar_t jokerSym;
     std::vector<int> results;
 
-    friend std::ostream& operator<<(std::ostream& os, const testState& obj) {
+    friend std::wostream& operator<<(std::wostream& os, const testState& obj) {
 
-        os << "[" << std::endl;
-        os << "Text: " << std::endl;
-        os << "\t" << obj.text << std::endl;
-        os << "Joker: " << std::endl;
-        os << "\t" << obj.joker << std::endl;
-        os << "JokerSym: " << std::endl;
-        os << "\t" << obj.jokerSym << std::endl;
+        os << L"[" << std::endl;
+        os << L"Text: " << std::endl;
+        os << L"\t" << obj.text << std::endl;
+        os << L"Joker: " << std::endl;
+        os << L"\t" << obj.joker << std::endl;
+        os << L"JokerSym: " << std::endl;
+        os << L"\t" << obj.jokerSym << std::endl;
 
-        os << "Results: " << std::endl;
+        os << L"Results: " << std::endl;
 
         for (auto result : obj.results) {
-            os << "\t" << result << std::endl;
+            os << L"\t" << result << std::endl;
         }
 
-        os << "]" <<std::endl;
+        os << L"]" <<std::endl;
 
         return os;
     }
@@ -46,7 +46,7 @@ struct testState {
 
 struct jokerSearchTest : TestAhoCorasick, testing::WithParamInterface<testState> {
     void SetUp() {
-        std::cout << GetParam();
+        std::wcout << GetParam();
     }
 };
 
@@ -59,16 +59,19 @@ TEST_P(jokerSearchTest, searchWithWildcard) {
 
 INSTANTIATE_TEST_CASE_P(Default, jokerSearchTest,
   testing::Values(
-  testState{"AACT", "A$", '$', {1, 2}},
-  testState{"AACT", "T$", '$', {}},
-  testState{"LOLYPOP", "L$L$P$P", '$', {1}},
-  testState{"MAMTREW", "A$$", '$', {2}},
-  testState{"AACT", "A$$", '$', {1, 2}},
-  testState{"KJLOHFAK", "$$$A$", '$', {4}},
-  testState{"KJLOHFAKFKJBVLSAEKJFBGLSAE", "$A$", '$', {6, 15, 24}}
+  testState{L"AACT", L"A$", L'$', {1, 2}},
+  testState{L"AACT", L"T$", L'$', {}},
+  testState{L"LOLYPOP", L"L$L$P$P", L'$', {1}},
+  testState{L"MAMTREW", L"A$$", L'$', {2}},
+  testState{L"AACT", L"A$$", L'$', {1, 2}},
+  testState{L"KJLOHFAK", L"$$$A$", L'$', {4}},
+  testState{L"KJLOHFAKFKJBVLSAEKJFBGLSAE", L"$A$", L'$', {6, 15, 24}},
+  // Update: cyrillic symbols
+  testState{L"ДРНOHFЖKFKJBVLSЖEKJFBGLSЖE", L"$Ж$", L'$', {6, 15, 24}}
   ));
 
 int main(int argc, char* argv[]) {
+  setlocale(LC_ALL, "ru_RU.UTF8");
   testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
 }

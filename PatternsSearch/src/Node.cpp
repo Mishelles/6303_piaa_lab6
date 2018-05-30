@@ -1,6 +1,6 @@
 #include "../headers/Node.h"
 
-Node::Node(const char& sym, const int& parentLink)
+Node::Node(const wchar_t& sym, const int& parentLink)
     : sym(sym)
     , parentLink(parentLink)
     , isEndOfPattern(false)

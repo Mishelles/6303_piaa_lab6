@@ -11,10 +11,10 @@ struct Bohr {
     Bohr();
 
     // Добавление строки в дерево
-    void addString(const std::string&, const int&);
+    void addString(const std::wstring&, const int&);
 
     // Получение перехода автомата
-    int getAutoMove(const int&, const char&);
+    int getAutoMove(const int&, const wchar_t&);
 
     // Получение суффиксальной ссылки
     int getSuffixLink(const int&);
@@ -23,10 +23,10 @@ struct Bohr {
     int getCorrectSuffixLink(const int&);
 
     // Проверка
-    void check(const int&, const int&, const std::vector<std::string>&, std::vector<result>&);
+    void check(const int&, const int&, const std::vector<std::wstring>&, std::vector<result>&);
 
     // Поиск
-    std::vector<result> find(const std::string&, const std::vector<std::string>&);
+    std::vector<result> find(const std::wstring&, const std::vector<std::wstring>&);
 
 
     // Данные

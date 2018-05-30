@@ -6,15 +6,15 @@
 
 struct Node {
 
-    Node(const char& sym, const int& parentLink = -1);
+    Node(const wchar_t& sym, const int& parentLink = -1);
 
-    std::map<char, int> nextNodes;
-    std::map<char, int> moves;
+    std::map<wchar_t, int> nextNodes;
+    std::map<wchar_t, int> moves;
 
     std::vector<int> patternNum;
 
     bool isEndOfPattern;
-    char sym;
+    wchar_t sym;
     int parentLink;
     int suffixLink;
     int correctSuffixLink;

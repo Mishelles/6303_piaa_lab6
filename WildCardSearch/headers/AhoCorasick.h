@@ -10,16 +10,16 @@ public:
     AhoCorasick();
     ~AhoCorasick();
 
-    void init(const std::string& text, const std::string& joker, const char& jokerSym);
+    void init(const std::wstring& text, const std::wstring& joker, const wchar_t& jokerSym);
     std::vector<int> solve();
     void reset();
 
 private:
 
     Bohr* _bohr;
-    std::string _text;
-    std::string _joker;
-    char _jokerSym;
+    std::wstring _text;
+    std::wstring _joker;
+    wchar_t _jokerSym;
 
 };
 

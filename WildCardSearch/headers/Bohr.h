@@ -9,18 +9,18 @@ struct Bohr {
 
       Bohr(const int& size);
 
-      void addString(const std::string& pattern, const int& numOfPattern);
-      int getAutoMove(const int& vertexNum, const char& sym);
+      void addString(const std::wstring& pattern, const int& numOfPattern);
+      int getAutoMove(const int& vertexNum, const wchar_t& sym);
       int getSuffixLink(const int& vertexNum);
       int getCorrectSuffixLink(const int& vertexNum);
 
       void check(const int& vertexNum, const int& curPos, std::vector<result>& results);
       void checkJoker(const int& vertexNum, const int& curPos, const unsigned int& jokerLen);
 
-      std::vector<unsigned int> parseJoker(const std::string& jokerPattern, const char& joker);
+      std::vector<unsigned int> parseJoker(const std::wstring& jokerPattern, const wchar_t& joker);
 
-      std::vector<int> searchJocker(const std::string& text, const std::string& joker, const char& jokerSym);
-      std::vector<result> search(const std::string& text);
+      std::vector<int> searchJocker(const std::wstring& text, const std::wstring& joker, const wchar_t& jokerSym);
+      std::vector<result> search(const std::wstring& text);
 
       // Данные
 
@@ -28,7 +28,7 @@ struct Bohr {
       std::vector<int> results;
       std::vector<int> back;
       std::vector<unsigned int> len;
-      std::vector<std::string> patterns;
+      std::vector<std::wstring> patterns;
 };
 
 #endif

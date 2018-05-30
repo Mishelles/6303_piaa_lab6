@@ -10,7 +10,7 @@ AhoCorasick::~AhoCorasick() {
   reset();
 }
 
-void AhoCorasick::init(const std::string& text, const std::vector<std::string>& patterns, const unsigned int& numOfPatterns) {
+void AhoCorasick::init(const std::wstring& text, const std::vector<std::wstring>& patterns, const unsigned int& numOfPatterns) {
     _text = text;
     _patterns = patterns;
 

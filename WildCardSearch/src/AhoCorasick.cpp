@@ -8,7 +8,7 @@ AhoCorasick::~AhoCorasick() {
     _bohr = NULL;
 }
 
-void AhoCorasick::init(const std::string& text, const std::string& joker, const char& jokerSym) {
+void AhoCorasick::init(const std::wstring& text, const std::wstring& joker, const wchar_t& jokerSym) {
     _text = text;
     _joker = joker;
     _jokerSym = jokerSym;

@@ -5,12 +5,12 @@ Bohr::Bohr() {
     bohr.push_back(Node('#'));
 }
 
-void Bohr::addString(const std::string& pattern, const int& numOfPatterns) {
+void Bohr::addString(const std::wstring& pattern, const int& numOfPatterns) {
 
     int nodeNum = 0;
 
     for (unsigned int i = 0; i < pattern.size(); i++) {
-        char sym = pattern[i];
+        wchar_t sym = pattern[i];
 
         if ((bohr[nodeNum].nextNodes.find(sym) == bohr[nodeNum].nextNodes.end())
             || (bohr[nodeNum].nextNodes[sym] == -1)) {
@@ -27,7 +27,7 @@ void Bohr::addString(const std::string& pattern, const int& numOfPatterns) {
 
 }
 
-int Bohr::getAutoMove(const int& nodeNum, const char& sym) {
+int Bohr::getAutoMove(const int& nodeNum, const wchar_t& sym) {
 
     if (bohr[nodeNum].moves.find(sym) == bohr[nodeNum].moves.end()
         || bohr[nodeNum].moves[sym] == -1) {
@@ -80,7 +80,7 @@ int Bohr::getCorrectSuffixLink(const int& nodeNum) {
 }
 
 void Bohr::check(const int& nodeNum, const int& i
-          ,  const std::vector<std::string>& patterns
+          ,  const std::vector<std::wstring>& patterns
           ,  std::vector<result> &results) {
 
     for (int next = nodeNum; next; next = getCorrectSuffixLink(next)) {
@@ -92,7 +92,7 @@ void Bohr::check(const int& nodeNum, const int& i
     }
 }
 
-std::vector<result> Bohr::find(const std::string& text, const std::vector<std::string>& patterns) {
+std::vector<result> Bohr::find(const std::wstring& text, const std::vector<std::wstring>& patterns) {
 
     std::vector<result> res;
 

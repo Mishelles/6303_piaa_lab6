@@ -3,15 +3,17 @@
 
 int main() {
 
-    std::string text;
+    setlocale(LC_ALL, "ru_RU.UTF8");
+
+    std::wstring text;
     unsigned int numOfPatterns;
 
-    std::cin >> text;
-    std::cin >> numOfPatterns;
-    std::vector<std::string> patterns(numOfPatterns);
+    std::wcin >> text;
+    std::wcin >> numOfPatterns;
+    std::vector<std::wstring> patterns(numOfPatterns);
 
     for (unsigned int i = 0; i < numOfPatterns; i++) {
-        std::cin >> patterns[i];
+        std::wcin >> patterns[i];
     }
 
     AhoCorasick ahoCor;
@@ -20,7 +22,7 @@ int main() {
     std::vector<result> results = ahoCor.solve();
 
     for (auto result : results) {
-        std::cout << result.first << " " << result.second << std::endl;
+        std::wcout << result.first << " " << result.second << std::endl;
     }
 
     return 0;

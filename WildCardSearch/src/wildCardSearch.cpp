@@ -3,13 +3,15 @@
 
 int main() {
 
-    std::string text;
-    std::string joker;
-    char jokerSym;
+    setlocale(LC_ALL, "ru_RU.UTF8");
 
-    std::cin >> text;
-    std::cin >> joker;
-    std::cin >> jokerSym;
+    std::wstring text;
+    std::wstring joker;
+    wchar_t jokerSym;
+
+    std::wcin >> text;
+    std::wcin >> joker;
+    std::wcin >> jokerSym;
 
     AhoCorasick ahoCorAlgorithm;
 
@@ -17,7 +19,7 @@ int main() {
     std::vector<int> res = ahoCorAlgorithm.solve();
 
     for (int result : res) {
-        std::cout << result << std::endl;
+        std::wcout << result << std::endl;
     }
 
     return 0;

@@ -5,7 +5,7 @@ Bohr::Bohr(const int& size) {
     back = std::vector<int>(size, 0);
 }
 
-void Bohr::addString(const std::string& pattern, const int& numOfPattern) {
+void Bohr::addString(const std::wstring& pattern, const int& numOfPattern) {
     int nodeNum = 0;
 
     for (unsigned int i = 0; i < pattern.size(); i++) {
@@ -22,7 +22,7 @@ void Bohr::addString(const std::string& pattern, const int& numOfPattern) {
     bohr[nodeNum].isEndOfPattern = true;
 }
 
-int Bohr::getAutoMove(const int& nodeNum, const char& sym) {
+int Bohr::getAutoMove(const int& nodeNum, const wchar_t& sym) {
 
     if (bohr[nodeNum].moves.find(sym) == bohr[nodeNum].moves.end()) {
   		  if (bohr[nodeNum].nextNodes.find(sym) != bohr[nodeNum].nextNodes.end()) {
@@ -93,9 +93,9 @@ void Bohr::checkJoker(const int& nodeNum, const int& curPos, const unsigned int&
   	}
 }
 
-std::vector<unsigned int> Bohr::parseJoker(const std::string& jokerPattern, const char& joker) {
+std::vector<unsigned int> Bohr::parseJoker(const std::wstring& jokerPattern, const wchar_t& joker) {
     std::vector <unsigned int> len;
-  	std::string temp;
+  	std::wstring temp;
 
   	for (unsigned int i = 0; i < jokerPattern.size(); i++) {
   		  if (jokerPattern[i] == joker) {
@@ -119,7 +119,7 @@ std::vector<unsigned int> Bohr::parseJoker(const std::string& jokerPattern, cons
   	return len;
 }
 
-std::vector<result> Bohr::search(const std::string& text) {
+std::vector<result> Bohr::search(const std::wstring& text) {
     for (size_t i = 0; i<patterns.size(); i++) {
         addString(patterns[i], i);
     }
@@ -136,7 +136,7 @@ std::vector<result> Bohr::search(const std::string& text) {
   	return results;
 }
 
-std::vector<int> Bohr::searchJocker(const std::string& text, const std::string& joker, const char& jokerSym) {
+std::vector<int> Bohr::searchJocker(const std::wstring& text, const std::wstring& joker, const wchar_t& jokerSym) {
     len = parseJoker(joker, jokerSym);
   	int nodeNum = 0;
 
